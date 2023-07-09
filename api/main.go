@@ -36,7 +36,7 @@ func main() {
 	schema.MustRegister("events", Event{})
 
 	opts := ConnectionString{
-		Host:     "half-canary-4432.g8z.cockroachlabs.cloud",
+		Host:     os.Getenv("COCKROACH_HOST"),
 		Port:     26257,
 		User:     os.Getenv("COCKROACH_USER"),
 		Password: os.Getenv("COCKROACH_PASSWORD"),
